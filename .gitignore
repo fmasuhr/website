@@ -1,0 +1,4 @@
+# Ignore Jekyll artefacts
+_site
+.sass-cache
+.jekyll-metadata

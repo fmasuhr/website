@@ -1,0 +1,22 @@
+# Site settings
+description: >-
+  Personal Webpage of Fionn Masuhr, located in Brunswick.
+  Software Engineer for Web development, AWS and Ruby.
+  Professionalized in DevOPS and Backend Engineering.
+title:            fionn.
+url:              http://www.fionn.io
+
+# Social settings
+author:
+  name:           Fionn Masuhr
+  profession:     Software Engineer
+github_username:  fmasuhr
+stackoverflow_id: 5346940
+xing_username:    Fionn_Masuhr
+
+# Build settings
+plugins:
+  - jekyll-seo-tag
+
+titles_from_headings:
+  enabled: false # enabled by default for github-pages gem

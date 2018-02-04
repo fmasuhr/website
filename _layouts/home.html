@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div class="brand">
+  <h1>{{ site.title | escape }}</h1>
+</div>
+
+{{ content }}
+
+<ul class="social-media">
+  <li>
+    <a href="https://github.com/{{ site.github_username | cgi_escape | escape }}">
+      {% include social-icon.html type="github" %}
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.xing.com/profile/{{ site.xing_username | cgi_escape | escape }}">
+      {% include social-icon.html type="xing" %}
+    </a>
+  </li>
+
+  <li>
+    <a href="https://stackoverflow.com/u/{{ site.stackoverflow_id }}">
+      {% include social-icon.html type="stackoverflow" %}
+    </a>
+  </li>
+</ul>
