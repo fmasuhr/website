@@ -1,0 +1,2 @@
+s3_bucket:   <%= ENV['AWS_BUCKET']        %>
+s3_endpoint: <%= ENV['AWS_BUCKET_REGION'] %>
