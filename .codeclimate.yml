@@ -1,0 +1,9 @@
+engines:
+
+  # https://docs.codeclimate.com/docs/markdownlint
+  markdownlint:
+    enabled: true
+
+  # https://docs.codeclimate.com/docs/scss-lint
+  scss-lint:
+    enabled: true
