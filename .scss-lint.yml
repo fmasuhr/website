@@ -1,3 +1,7 @@
+preprocess_command: "sed '1,3d'"
+preprocess_files:
+  - assets/*.scss
+
 linters:
   DuplicateProperty:
     ignore_consecutive:
