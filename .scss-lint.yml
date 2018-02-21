@@ -1,0 +1,23 @@
+preprocess_command: "sed '1,3d'"
+preprocess_files:
+  - assets/*.scss
+
+linters:
+  DuplicateProperty:
+    ignore_consecutive:
+      - background
+      - max-width
+      - min-height
+
+  SpaceAfterPropertyColon:
+    style: at_least_one_space
+
+  SingleLinePerSelector:
+    enabled: false
+
+  VendorPrefix:
+    excluded_identifiers:
+      - calc
+      - font-feature-settings
+      - radial-gradient
+      - text-size-adjust

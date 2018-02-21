@@ -1,6 +1,4 @@
-/**
- * Reset some basic elements
- */
+// Reset some basic elements
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -10,26 +8,22 @@ dl, dd, ol, ul, figure {
 
 
 
-/**
- * Basic styling
- */
+// Basic styling
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
   background-color: $background-color;
-  -webkit-text-size-adjust: 100%;
+  color: $text-color;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
   -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
   font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
 }
 
 
 
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
+// Set `margin-bottom` to maintain vertical rhythm
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
@@ -39,9 +33,7 @@ ul, ol, dl, figure,
 
 
 
-/**
- * Images
- */
+// Images
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -49,10 +41,9 @@ img {
 
 
 
-/**
- * Lists
- */
-ul, ol {
+// Lists
+ul,
+ol {
   margin-left: $spacing-unit;
 }
 
@@ -65,18 +56,14 @@ li {
 
 
 
-/**
- * Headings
- */
+// Headings
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
 
 
 
-/**
- * Links
- */
+// Links
 a {
   color: $brand-color;
   text-decoration: none;
@@ -87,9 +74,7 @@ a {
 }
 
 
-/**
- * Blockquotes
- */
+// Blockquotes
 blockquote {
   @include relative-font-size(1.125);
   border-left: 4px solid $grey-color-light;
@@ -105,56 +90,52 @@ blockquote {
 
 
 
-/**
- * Wrapper
- */
+// Wrapper
 .wrapper {
-  margin-right: auto;
+  @extend %clearfix;
+
   margin-left: auto;
+  margin-right: auto;
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
   max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-  padding-right: $spacing-unit;
   padding-left: $spacing-unit;
-  @extend %clearfix;
+  padding-right: $spacing-unit;
 
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
+    padding-right: $spacing-unit / 2;
   }
 }
 
 
 
-/**
- * Clearfix
- */
-%clearfix:after {
-  content: "";
-  display: table;
+// Clearfix
+%clearfix::after {
   clear: both;
+  content: '';
+  display: table;
 }
 
 
 
-/**
- * Tables
- */
+// Tables
 table {
-  border-collapse: collapse;
   border: 1px solid $grey-color-light;
+  border-collapse: collapse;
   color: lighten($text-color, 18%);
   margin-bottom: $spacing-unit;
   text-align: $table-text-align;
   width: 100%;
 
-  td {
-    border: 1px solid $grey-color-light;
+  td,
+  th {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
   }
 
-  th, td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+  td {
+    border: 1px solid $grey-color-light;
   }
 
   th {
