@@ -17,6 +17,3 @@ xing_username:    Fionn_Masuhr
 # Build settings
 plugins:
   - jekyll-seo-tag
-
-titles_from_headings:
-  enabled: false # enabled by default for github-pages gem
