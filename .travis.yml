@@ -16,5 +16,6 @@ deploy:
       branch: master
   - provider: script
     script: bundle exec s3_website push
+    skip_cleanup: true
     on:
       branch: master
