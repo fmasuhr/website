@@ -8,9 +8,13 @@ Personal website of Fionn Masuhr
 
 ## Getting Started
 
-### Prequisites
+### Dependencies
 
-* [Jekyll](https://jekyllrb.com): `gem install jekyll`
+Install dependencies via [Bundler](https://bundler.io)
+
+```sh
+bundle install
+```
 
 ### Development
 
