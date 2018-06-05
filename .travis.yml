@@ -4,5 +4,8 @@ cache: bundler
 
 script: bundle exec jekyll build
 
-after_success:
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" -a "$TRAVIS_BRANCH" == "master" ]; then bundle exec s3_website push; fi
+deploy:
+  provider: script
+  script: bundle exec s3_website push
+  on:
+    branch: master
