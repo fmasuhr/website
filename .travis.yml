@@ -5,14 +5,13 @@ cache:
   directories:
     - $(npm config get prefix)/lib/node_modules # global NPM packages
 
-before_install:
-  - npm install -g snyk
-
 script: bundle exec jekyll build
 
 deploy:
   - provider: script
-    script: snyk monitor --org=fmasuhr
+    script:
+      - npm install -g snyk
+      - snyk monitor --org=fmasuhr
     on:
       branch: master
   - provider: script
