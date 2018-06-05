@@ -10,8 +10,8 @@ script: bundle exec jekyll build
 deploy:
   - provider: script
     script:
-      - npm install -g snyk
-      - snyk monitor --org=fmasuhr
+      npm install -g snyk;
+      snyk monitor --org=fmasuhr
     on:
       branch: master
   - provider: script
