@@ -12,11 +12,10 @@ deploy:
     script:
       npm install -g snyk;
       snyk monitor --org=fmasuhr
-    skip_cleanup: true
     on:
       branch: master
   - provider: script
-    script: bundle exec s3_website push
+    script: rvm use $(cat .ruby-version) do bundle exec s3_website push
     skip_cleanup: true
     on:
       branch: master
