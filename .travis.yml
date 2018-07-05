@@ -12,6 +12,7 @@ deploy:
     script:
       npm install -g snyk;
       snyk monitor --org=fmasuhr
+    skip_cleanup: true
     on:
       branch: master
   - provider: script
