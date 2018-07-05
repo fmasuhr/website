@@ -5,6 +5,9 @@ cache:
   directories:
     - $(npm config get prefix)/lib/node_modules # global NPM packages
 
+before_script:
+  - bundle exec s3_website install # Needs to happen after install and allows caching the JAR for usage in the deploy
+
 script: bundle exec jekyll build
 
 deploy:
