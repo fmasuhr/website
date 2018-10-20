@@ -1,0 +1,5 @@
+# See http://www.robotstxt.org/orig.html#format for documentation on how to use the robots.txt file
+#
+# Allow all
+User-agent: *
+Disallow:
