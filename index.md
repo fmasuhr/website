@@ -2,4 +2,4 @@
 layout: home
 ---
 
-# {{ site.author.profession }}.
+## {{ site.author.profession }}.
