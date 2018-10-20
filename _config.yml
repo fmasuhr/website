@@ -8,11 +8,17 @@ url:   https://www.fionn.io
 
 # Social settings
 author:
-  name:           Fionn Masuhr
-  profession:     Software Engineer
-github_username:  fmasuhr
-stackoverflow_id: 5346940
-xing_username:    Fionn_Masuhr
+  name:       Fionn Masuhr
+  profession: Software Engineer
+github:
+  title:    GitHub
+  username: fmasuhr
+stackoverflow:
+  id:    5346940
+  title: Stack Overflow
+xing:
+  title:    XING
+  username: Fionn_Masuhr
 
 # Build settings
 exclude:

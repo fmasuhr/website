@@ -10,19 +10,19 @@ layout: default
 
 <ul class="social-media">
   <li>
-    <a href="https://github.com/{{ site.github_username | cgi_escape | escape }}">
+    <a href="https://github.com/{{ site.github.username | cgi_escape | escape }}" title="{{ site.github.title }}">
       {% include social-icon.html type="github" %}
     </a>
   </li>
 
   <li>
-    <a href="https://www.xing.com/profile/{{ site.xing_username | cgi_escape | escape }}">
+    <a href="https://www.xing.com/profile/{{ site.xing.username | cgi_escape | escape }}" title="{{ site.xing.title }}">
       {% include social-icon.html type="xing" %}
     </a>
   </li>
 
   <li>
-    <a href="https://stackoverflow.com/u/{{ site.stackoverflow_id }}">
+    <a href="https://stackoverflow.com/u/{{ site.stackoverflow.id }}" title="{{ site.stackoverflow.title }}">
       {% include social-icon.html type="stackoverflow" %}
     </a>
   </li>
