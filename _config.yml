@@ -1,9 +1,9 @@
 # Site settings
+brand: fionn.
 description: >-
   Personal Webpage of Fionn Masuhr, located in Brunswick.
   Software Engineer for Web development, AWS and Ruby.
   Professionalized in DevOPS and Backend Engineering.
-title: fionn.
 url:   https://www.fionn.io
 
 # Social settings

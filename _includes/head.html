@@ -2,7 +2,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.title | escape }} | {{ site.author.profession | escape }}</title>
+  {% capture title%}{{page.title}}{%endcapture%} {% comment %} Enforce string as integer is not supported by 'escape' {% endcomment %}
+  <title>{{ site.brand | escape }}{% if page.title %} | {{ title | escape }}{% endif %}</title>
   {% seo title=false %}
 
   <link rel="icon" href="{{ "/assets/favicon.ico" | relative_url }}" type="image/x-icon">
