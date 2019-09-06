@@ -6,7 +6,7 @@ cache:
     - $(npm config get prefix)/lib/node_modules # global NPM packages
 
 before_install:
-  - pip3 install awscli --upgrade --user
+  - pip install awscli --upgrade --user
 
 script: bundle exec jekyll build
 
