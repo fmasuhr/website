@@ -5,8 +5,8 @@ cache:
   directories:
     - $(npm config get prefix)/lib/node_modules # global NPM packages
 
-before_script:
-  - bundle exec s3_website install # Needs to happen after install and allows caching the JAR for usage in the deploy
+before_install:
+  - pip install awscli
 
 script: bundle exec jekyll build
 
@@ -18,7 +18,7 @@ deploy:
     on:
       branch: master
   - provider: script
-    script: rvm use $(cat .ruby-version) do bundle exec s3_website push
+    script: aws s3 sync --acl public-read --delete _site/ s3://$AWS_BUCKET
     skip_cleanup: true
     on:
       branch: master
