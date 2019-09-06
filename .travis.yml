@@ -1,8 +1,5 @@
 language: ruby
 
-before_install:
-  - pip install awscli --upgrade --user
-
 script: bundle exec jekyll build
 
 deploy:
@@ -13,7 +10,9 @@ deploy:
     on:
       branch: master
   - provider: script
-    script: aws s3 sync --acl public-read --delete _site/ s3://$AWS_BUCKET
+    script:
+      pip install awscli --upgrade --user;
+      aws s3 sync --acl public-read --delete _site/ s3://$AWS_BUCKET
     skip_cleanup: true
     on:
       branch: master
