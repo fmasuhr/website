@@ -1,5 +1,11 @@
 language: ruby
 
+cache:
+  bundler: true
+  pip: true
+  directories:
+    - $(npm config get prefix)/lib/node_modules # global NPM packages
+
 script: bundle exec jekyll build
 
 deploy:
