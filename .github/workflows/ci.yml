@@ -1,13 +1,12 @@
 name: CI
 
-on: [push]
+on: push
 
 env:
   BUNDLE_PATH: vendor/bundle
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -24,18 +23,32 @@ jobs:
       run: gem install bundler
     - name: Install gems
       run: bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH}
-    - name: Build pages
+    - name: Build site
       run: bundle exec jekyll build
-      
+    - name: Upload site as artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: site
+        path: _site
+          
+  deploy:
+    # if: github.event.ref == 'refs/heads/master'
+    needs: build
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Download site artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: site
     - name: Configure AWS Credentials
-      if: github.event.ref == 'refs/heads/master'
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
     - name: Upload to S3
-      if: github.event.ref == 'refs/heads/master'
       run: |
         pip install awscli --upgrade --user;
         aws s3 sync --acl public-read --delete _site/ s3://${{ secrets.AWS_BUCKET }}
