@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/fmasuhr/website.svg?branch=master)](https://travis-ci.org/fmasuhr/website)
 [![Issue Count](https://codeclimate.com/github/fmasuhr/website/badges/issue_count.svg)](https://codeclimate.com/github/fmasuhr/website)
-[![Known Vulnerabilities](https://snyk.io/test/github/fmasuhr/website/badge.svg)](https://snyk.io/test/github/fmasuhr/website)
 
 # Website
 
