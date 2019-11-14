@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/fmasuhr/website.svg?branch=master)](https://travis-ci.org/fmasuhr/website)
 [![Issue Count](https://codeclimate.com/github/fmasuhr/website/badges/issue_count.svg)](https://codeclimate.com/github/fmasuhr/website)
 
 # Website
