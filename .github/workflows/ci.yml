@@ -26,3 +26,7 @@ jobs:
       run: bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH}
     - name: Build pages
       run: bundle exec jekyll build
+    - name: Upload to S3
+      run: |
+        pip install awscli --upgrade --user;
+        aws s3 sync --acl public-read --delete _site/ s3://$AWS_BUCKET
