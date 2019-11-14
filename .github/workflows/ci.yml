@@ -18,7 +18,7 @@ jobs:
     - name: Cache gems
       uses: actions/cache@v1
       with:
-        path: ${{ BUNDLE_PATH }}
+        path: ${{ env.BUNDLE_PATH }}
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
     - name: Install bundler
       run: gem install bundler
