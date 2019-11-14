@@ -2,12 +2,12 @@ name: CI
 
 on: push
 
-env:
-  BUNDLE_PATH: vendor/bundle
-
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      BUNDLE_PATH: vendor/bundle
 
     steps:
     - uses: actions/checkout@v1
