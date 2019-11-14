@@ -19,7 +19,9 @@ jobs:
       uses: actions/cache@v1
       with:
         path: ${{ env.BUNDLE_PATH }}
-        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+            ${{ runner.os }}-gems-
     - name: Install bundler
       run: gem install bundler
     - name: Install gems
@@ -31,17 +33,17 @@ jobs:
       with:
         name: _site
         path: _site
-          
+
   deploy:
     if: github.event.ref == 'refs/heads/master'
     needs: build
-    
+
     runs-on: ubuntu-latest
-    
+
     env:
       AWS_REGION: eu-west-1
       AWS_BUCKET: fionn-io
-      
+
     steps:
     - name: Download site artifact
       uses: actions/download-artifact@v1
