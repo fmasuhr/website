@@ -33,7 +33,7 @@ jobs:
         path: _site
           
   deploy:
-    # if: github.event.ref == 'refs/heads/master'
+    if: github.event.ref == 'refs/heads/master'
     needs: build
     
     runs-on: ubuntu-latest
