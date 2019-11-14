@@ -11,12 +11,6 @@ script: bundle exec jekyll build
 deploy:
   - provider: script
     script:
-      npm install -g snyk;
-      snyk monitor --org=fmasuhr
-    on:
-      branch: master
-  - provider: script
-    script:
       pip install awscli --upgrade --user;
       aws s3 sync --acl public-read --delete _site/ s3://$AWS_BUCKET
     skip_cleanup: true
