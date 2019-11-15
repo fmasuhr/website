@@ -1,5 +1,3 @@
-[![Issue Count](https://codeclimate.com/github/fmasuhr/website/badges/issue_count.svg)](https://codeclimate.com/github/fmasuhr/website)
-
 # Website
 
 Personal website of Fionn Masuhr
