@@ -7,3 +7,7 @@ gem 'jekyll'
 group :jekyll_plugins do
   gem 'jekyll-seo-tag'
 end
+
+group :development do
+  gem 'mdl'
+end
