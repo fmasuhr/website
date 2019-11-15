@@ -61,5 +61,4 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
     - name: Upload to S3
       run: |
-        pip install awscli --upgrade --user;
         aws s3 sync --acl public-read --delete _site/ s3://${{ env.AWS_BUCKET }}
