@@ -1,11 +1,5 @@
 engines:
 
-  # https://docs.codeclimate.com/docs/markdownlint
-  markdownlint:
-    enabled: true
-    issue_override:
-      severity: minor
-
   # https://docs.codeclimate.com/docs/scss-lint
   scss-lint:
     enabled: true
