@@ -29,6 +29,8 @@ jobs:
 
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
+    - name: Run SCSS Lint
+      run: bundle exec scss-lint .
 
     - name: Build site
       run: bundle exec jekyll build

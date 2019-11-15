@@ -1,6 +1,8 @@
-preprocess_command: "sed '1,3d'"
+preprocess_command: "sed '1,2d'"
 preprocess_files:
-  - assets/*.scss
+  - ./assets/main.scss
+
+exclude: './_site/assets/**'
 
 linters:
   DuplicateProperty:

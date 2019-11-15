@@ -10,4 +10,5 @@ end
 
 group :development do
   gem 'mdl'
+  gem 'scss_lint'
 end
