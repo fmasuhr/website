@@ -20,8 +20,7 @@ jobs:
       with:
         path: ${{ env.BUNDLE_PATH }}
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-            ${{ runner.os }}-gems-
+        restore-keys: ${{ runner.os }}-gems-
     - name: Install bundler
       run: gem install bundler
     - name: Install gems
@@ -46,8 +45,7 @@ jobs:
       with:
         path: ${{ env.BUNDLE_PATH }}
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-            ${{ runner.os }}-gems-
+        restore-keys: ${{ runner.os }}-gems-
     - name: Install bundler
       run: gem install bundler
     - name: Install gems
@@ -82,5 +80,4 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
     - name: Upload to S3
-      run: |
-        aws s3 sync --acl public-read --delete _site/ s3://${{ env.AWS_BUCKET }}
+      run: aws s3 sync --acl public-read --delete _site/ s3://${{ env.AWS_BUCKET }}
