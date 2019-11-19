@@ -7,7 +7,7 @@ env:
   RUBY_VERSION: '2.6.x'
 
 jobs:
-  install:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,41 +26,32 @@ jobs:
       run: gem install bundler
     - name: Install gems
       run: bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH}
-    - name: Upload gems as artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: gems
-        path: ${{ env.BUNDLE_PATH }}
-
-  lint:
-    needs: install
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Download gems artifact
-      uses: actions/download-artifact@v1
-      with:
-        name: gems
-        path: ${{ env.BUNDLE_PATH }}
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
     - name: Run SCSS Lint
       run: bundle exec scss-lint .
 
   build:
-    needs: [install, lint]
+    needs: lint
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
-    - name: Download gems artifact
-      uses: actions/download-artifact@v1
+    - uses: actions/setup-ruby@v1
       with:
-        name: gems
+        ruby-version: ${{ env.RUBY_VERSION }}
+    - name: Cache gems
+      uses: actions/cache@v1
+      with:
         path: ${{ env.BUNDLE_PATH }}
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+            ${{ runner.os }}-gems-
+    - name: Install bundler
+      run: gem install bundler
+    - name: Install gems
+      run: bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH}
     - name: Build site
       run: bundle exec jekyll build
     - name: Upload site as artifact
