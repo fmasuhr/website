@@ -29,7 +29,7 @@ jobs:
     - name: Upload gems as artifact
       uses: actions/upload-artifact@v1
       with:
-        name: ${{ env.BUNDLE_PATH }}
+        name: gems
         path: ${{ env.BUNDLE_PATH }}
 
   lint:
@@ -42,7 +42,8 @@ jobs:
     - name: Download gems artifact
       uses: actions/download-artifact@v1
       with:
-        name: ${{ env.BUNDLE_PATH }}
+        name: gems
+        path: ${{ env.BUNDLE_PATH }}
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
     - name: Run SCSS Lint
@@ -58,7 +59,8 @@ jobs:
     - name: Download gems artifact
       uses: actions/download-artifact@v1
       with:
-        name: ${{ env.BUNDLE_PATH }}
+        name: gems
+        path: ${{ env.BUNDLE_PATH }}
     - name: Build site
       run: bundle exec jekyll build
     - name: Upload site as artifact
