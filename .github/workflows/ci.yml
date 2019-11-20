@@ -2,13 +2,13 @@ name: CI
 
 on: push
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+env:
+  BUNDLE_PATH: vendor/bundle
+  RUBY_VERSION: '2.6.x'
 
-    env:
-      BUNDLE_PATH: vendor/bundle
-      RUBY_VERSION: '2.6.x'
+jobs:
+  lint:
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
@@ -20,18 +20,36 @@ jobs:
       with:
         path: ${{ env.BUNDLE_PATH }}
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-            ${{ runner.os }}-gems-
+        restore-keys: ${{ runner.os }}-gems-
     - name: Install bundler
       run: gem install bundler
     - name: Install gems
       run: bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH}
-
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
     - name: Run SCSS Lint
       run: bundle exec scss-lint .
 
+  build:
+    needs: lint
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: ${{ env.RUBY_VERSION }}
+    - name: Cache gems
+      uses: actions/cache@v1
+      with:
+        path: ${{ env.BUNDLE_PATH }}
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: ${{ runner.os }}-gems-
+    - name: Install bundler
+      run: gem install bundler
+    - name: Install gems
+      run: bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH}
     - name: Build site
       run: bundle exec jekyll build
     - name: Upload site as artifact
@@ -62,5 +80,4 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
     - name: Upload to S3
-      run: |
-        aws s3 sync --acl public-read --delete _site/ s3://${{ env.AWS_BUCKET }}
+      run: aws s3 sync --acl public-read --delete _site/ s3://${{ env.AWS_BUCKET }}
