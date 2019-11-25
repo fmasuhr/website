@@ -4,3 +4,5 @@ update_configs:
   - package_manager: ruby:bundler
     directory: /
     update_schedule: weekly
+    default_assignees:
+      - fmasuhr
