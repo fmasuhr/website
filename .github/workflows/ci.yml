@@ -15,7 +15,7 @@ jobs:
       id: rbenv
     - uses: actions/setup-ruby@v1
       with:
-       ruby-version: "${{ steps.rbenv.outputs.RUBY_VERSION }}"
+        ruby-version: "${{ steps.rbenv.outputs.RUBY_VERSION }}"
     - name: Cache gems
       uses: actions/cache@v1
       with:
@@ -42,7 +42,7 @@ jobs:
       id: rbenv
     - uses: actions/setup-ruby@v1
       with:
-       ruby-version: "${{ steps.rbenv.outputs.RUBY_VERSION }}"
+        ruby-version: "${{ steps.rbenv.outputs.RUBY_VERSION }}"
     - name: Cache gems
       uses: actions/cache@v1
       with:
