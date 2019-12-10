@@ -4,7 +4,6 @@ on: push
 
 env:
   BUNDLE_PATH: vendor/bundle
-  RUBY_VERSION: '2.6.x'
 
 jobs:
   lint:
@@ -12,9 +11,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - run: echo "::set-output name=RUBY_VERSION::$(cat .ruby-version)"
+      id: rbenv
     - uses: actions/setup-ruby@v1
       with:
-        ruby-version: ${{ env.RUBY_VERSION }}
+        ruby-version: ${{ steps.rbenv.outputs.RUBY_VERSION }}
     - name: Cache gems
       uses: actions/cache@v1
       with:
@@ -37,9 +38,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - run: echo "::set-output name=RUBY_VERSION::$(cat .ruby-version)"
+      id: rbenv
     - uses: actions/setup-ruby@v1
       with:
-        ruby-version: ${{ env.RUBY_VERSION }}
+        ruby-version: ${{ steps.rbenv.outputs.RUBY_VERSION }}
     - name: Cache gems
       uses: actions/cache@v1
       with:
