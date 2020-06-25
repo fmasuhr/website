@@ -6,3 +6,10 @@ updates:
       interval: daily
     assignees:
       - fmasuhr
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+    assignees:
+      - fmasuhr
