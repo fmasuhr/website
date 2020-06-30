@@ -2,9 +2,6 @@ name: CI
 
 on: push
 
-env:
-  BUNDLE_PATH: vendor/bundle
-
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -12,16 +9,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: ruby/setup-ruby@v1
-    - name: Cache gems
-      uses: actions/cache@v2
       with:
-        path: ${{ env.BUNDLE_PATH }}
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: ${{ runner.os }}-gems-
+        bundler-cache: true
     - name: Install bundler
       run: gem install bundler
-    - name: Install gems
-      run: bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH}
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
     - name: Run SCSS Lint
@@ -35,16 +26,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: ruby/setup-ruby@v1
-    - name: Cache gems
-      uses: actions/cache@v2
       with:
-        path: ${{ env.BUNDLE_PATH }}
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: ${{ runner.os }}-gems-
+        bundler-cache: true
     - name: Install bundler
       run: gem install bundler
-    - name: Install gems
-      run: bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH}
     - name: Build site
       run: bundle exec jekyll build
     - name: Upload site as artifact
