@@ -11,8 +11,6 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
-    - name: Install bundler
-      run: gem install bundler
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
     - name: Run SCSS Lint
@@ -28,8 +26,6 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
-    - name: Install bundler
-      run: gem install bundler
     - name: Build site
       run: bundle exec jekyll build
     - name: Upload site as artifact
