@@ -3,3 +3,6 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+
+# Ignore node modules
+/node_modules

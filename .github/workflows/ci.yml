@@ -13,8 +13,15 @@ jobs:
         bundler-cache: true
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
-    - name: Run SCSS Lint
-      run: bundle exec scss-lint .
+
+    - name: Read .nvmrc
+      id: nvmrc
+      run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ steps.nvmrc.outputs.NODE_VERSION }}
+    - run: npm ci
+    - run: npm run lint
 
   build:
     needs: lint

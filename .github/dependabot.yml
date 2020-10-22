@@ -13,3 +13,10 @@ updates:
       interval: daily
     assignees:
       - fmasuhr
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+    assignees:
+      - fmasuhr
