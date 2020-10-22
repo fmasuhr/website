@@ -14,14 +14,14 @@ jobs:
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
 
-   - name: Read .nvmrc
-     id: nvmrc
-     run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
-   - uses: actions/setup-node@v1
-     with:
-       node-version: ${{ steps.nvmrc.outputs.NODE_VERSION }}
-   - run: npm ci
-   - run: npm run lint
+    - name: Read .nvmrc
+      id: nvmrc
+      run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ steps.nvmrc.outputs.NODE_VERSION }}
+    - run: npm ci
+    - run: npm run lint
 
   build:
     needs: lint
