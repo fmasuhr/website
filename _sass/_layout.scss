@@ -19,16 +19,16 @@
 .social-media {
   list-style: none;
   margin: $spacing-unit 0 0;
+}
 
-  li {
-    display: inline;
-  }
+.social-media li {
+  display: inline;
 
-  li&:not(:last-child) {
+  &:not(:last-child) {
     margin-right: $spacing-unit;
   }
 
-  li&a:hover {
+  &a:hover {
     text-decoration: none;
   }
 }
