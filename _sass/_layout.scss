@@ -22,18 +22,16 @@
 
   li {
     display: inline;
+  }
 
-    &:not(:last-child) {
-      margin-right: $spacing-unit;
-    }
+  li&:not(:last-child) {
+    margin-right: $spacing-unit;
+  }
 
-    a:hover {
-      text-decoration: none;
-    }
+  li&a:hover {
+    text-decoration: none;
   }
 }
-
-
 
 // Body
 html {
@@ -41,9 +39,7 @@ html {
 }
 
 body {
-  background:    -moz-radial-gradient(center, ellipse cover, $grey-color-light 0%, $background-color 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, $grey-color-light 0%, $background-color 100%);
-  background:         radial-gradient(ellipse at center, $grey-color-light 0%, $background-color 100%);
+  background: radial-gradient(ellipse at center, $grey-color-light 0%, $background-color 100%);
   background: $background-color;
   border-left: $border;
   border-right: $border;
@@ -71,19 +67,15 @@ body {
   }
 }
 
-
-
 // Page
 .page-content {
   box-sizing: border-box;
   margin-bottom: -$spacing-unit * 3;
   min-height: -webkit-calc(100vh - (2 * (#{$border-size} + #{$border-margin})));
-  min-height:         calc(100vh - (2 * (#{$border-size} + #{$border-margin})));
+  min-height: calc(100vh - (2 * (#{$border-size} + #{$border-margin})));
   padding-bottom: $spacing-unit * 3;
   padding-top: $spacing-unit * 2;
 }
-
-
 
 // Footer
 .footer {

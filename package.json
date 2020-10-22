@@ -1,0 +1,14 @@
+{
+  "name": "website",
+  "description": "Personal website of Fionn Masuhr",
+  "version": "0.0.1",
+  "repository": "github:fmasuhr/website",
+  "devDependencies": {
+    "stylelint": "*",
+    "stylelint-config-sass-guidelines": "*",
+    "stylelint-config-standard": "*"
+  },
+  "scripts": {
+    "lint": "stylelint **/*.scss"
+  }
+}
