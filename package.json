@@ -6,8 +6,7 @@
   "license": "MIT",
   "devDependencies": {
     "stylelint": "*",
-    "stylelint-config-sass-guidelines": "*",
-    "stylelint-config-standard": "*"
+    "stylelint-config-sass-guidelines": "*"
   },
   "scripts": {
     "lint": "stylelint **/*.scss"
