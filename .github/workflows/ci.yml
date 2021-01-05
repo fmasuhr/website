@@ -36,7 +36,7 @@ jobs:
     - name: Build site
       run: bundle exec jekyll build
     - name: Upload site as artifact
-      uses: actions/upload-artifact@v2.2.1
+      uses: actions/upload-artifact@v2.2.2
       with:
         name: _site
         path: _site
