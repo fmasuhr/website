@@ -71,7 +71,6 @@ body {
 .page-content {
   box-sizing: border-box;
   margin-bottom: -$spacing-unit * 3;
-  min-height: -webkit-calc(100vh - (2 * (#{$border-size} + #{$border-margin})));
   min-height: calc(100vh - (2 * (#{$border-size} + #{$border-margin})));
   padding-bottom: $spacing-unit * 3;
   padding-top: $spacing-unit * 2;
