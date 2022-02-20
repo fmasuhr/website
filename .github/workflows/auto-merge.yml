@@ -22,7 +22,7 @@ jobs:
           github-token: ${{ github.token }}
       - name: Merge PR
         uses: pascalgn/automerge-action@v0.14.3
-        if: contains(['bundler', 'npm'], steps.dependabot-metadata.outputs.package-ecosystem) && steps.dependabot-metadata.outputs.dependency-type == 'direct:development'
+        if: (steps.dependabot-metadata.outputs.package-ecosystem == 'bundler' || steps.dependabot-metadata.outputs.package-ecosystem == 'npm') && steps.dependabot-metadata.outputs.dependency-type == 'direct:development'
         env:
           MERGE_LABELS: '' # all
           GITHUB_TOKEN: ${{ github.token }}
