@@ -14,7 +14,7 @@ jobs:
     - name: Run Markdown Lint
       run: bundle exec mdl --git-recurse .
 
-    - uses: actions/setup-node@v3.3.0
+    - uses: actions/setup-node@v3.4.0
       with:
         node-version-file: .nvmrc
     - run: npm ci
