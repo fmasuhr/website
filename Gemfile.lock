@@ -3,7 +3,8 @@ GEM
   specs:
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    chef-utils (16.4.41)
+    chef-utils (18.0.161)
+      concurrent-ruby
     colorator (1.1.0)
     concurrent-ruby (1.1.9)
     em-websocket (0.5.3)
@@ -36,7 +37,7 @@ GEM
       jekyll (>= 3.8, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    kramdown (2.3.1)
+    kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
@@ -44,7 +45,7 @@ GEM
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    mdl (0.11.0)
+    mdl (0.12.0)
       kramdown (~> 2.3)
       kramdown-parser-gfm (~> 1.1)
       mixlib-cli (~> 2.1, >= 2.1.1)
@@ -52,9 +53,9 @@ GEM
       mixlib-shellout
     mercenary (0.4.0)
     mixlib-cli (2.1.8)
-    mixlib-config (3.0.9)
+    mixlib-config (3.0.27)
       tomlrb
-    mixlib-shellout (3.1.4)
+    mixlib-shellout (3.2.7)
       chef-utils
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -69,7 +70,7 @@ GEM
       ffi (~> 1.9)
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    tomlrb (1.3.0)
+    tomlrb (2.0.3)
     unicode-display_width (1.8.0)
 
 PLATFORMS
