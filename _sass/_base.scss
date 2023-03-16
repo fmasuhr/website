@@ -41,7 +41,7 @@ ol,
 dl,
 figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: calc($spacing-unit / 2);
 }
 
 // Images
@@ -90,7 +90,7 @@ blockquote {
   color: $grey-color;
   font-style: italic;
   letter-spacing: -1px;
-  padding-left: $spacing-unit / 2;
+  padding-left: calc($spacing-unit / 2);
 
   > :last-child {
     margin-bottom: 0;
@@ -109,8 +109,8 @@ blockquote {
 
   @include media-query($on-laptop) {
     max-width: calc(#{$content-width} - (#{$spacing-unit}));
-    padding-left: $spacing-unit / 2;
-    padding-right: $spacing-unit / 2;
+    padding-left: calc($spacing-unit / 2);
+    padding-right: calc($spacing-unit / 2);
   }
 }
 
@@ -125,14 +125,14 @@ blockquote {
 table {
   border: 1px solid $grey-color-light;
   border-collapse: collapse;
-  color: color.adjust($text-color, $lightness: 18%);
+  color: lighten($text-color, 18%);
   margin-bottom: $spacing-unit;
   text-align: $table-text-align;
   width: 100%;
 
   td,
   th {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    padding: calc($spacing-unit / 3) calc($spacing-unit / 2);
   }
 
   td {
@@ -140,12 +140,12 @@ table {
   }
 
   th {
-    background-color: color.adjust($grey-color-light, $lightness: 3%);
-    border: 1px solid color.adjust($grey-color-light, $lightness: -4%);
-    border-bottom-color: color.adjust($grey-color-light, $lightness: -12%);
+    background-color: lighten($grey-color-light, 3%);
+    border: 1px solid darken($grey-color-light, 4%);
+    border-bottom-color: darken($grey-color-light, 12%);
   }
 
   tr:nth-child(even) {
-    background-color: color.adjust($grey-color-light, $lightness: 6%);
+    background-color: lighten($grey-color-light, 6%);
   }
 }
