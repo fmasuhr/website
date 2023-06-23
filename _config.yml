@@ -22,10 +22,10 @@ xing:
 
 # Build settings
 exclude:
-  - Gemfile
-  - Gemfile.lock
+  - LICENSE
+  - package-lock.json
+  - package.json
   - README.md
-  - vendor/
 
 plugins:
   - jekyll-seo-tag
