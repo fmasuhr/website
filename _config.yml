@@ -1,9 +1,9 @@
 # Site settings
 brand: fionn.
 description: >-
-  Personal Webpage of Fionn Masuhr, located in Germany.
-  Software Engineer for Web development, AWS and Ruby.
-  Professionalized in DevOPS and Backend Engineering.
+  Fionn Masuhr is an experienced DevOps engineer specializing in AWS and cloud computing.
+  He has a comprehensive skill set in AWS services and cloud architecture which he
+  successfully used to build CI/CD pipelines, and implementing scalable cloud solutions.
 url:   https://www.fionn.io
 
 # Social settings
