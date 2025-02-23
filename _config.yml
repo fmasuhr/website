@@ -1,9 +1,9 @@
 # Site settings
 brand: fionn.
 description: >-
-  Fionn Masuhr is an experienced DevOps engineer specializing in AWS and cloud computing.
-  He has a comprehensive skill set in AWS services and cloud architecture which he
-  successfully used to build CI/CD pipelines, and implementing scalable cloud solutions.
+  Fionn Masuhr is an experienced software engineer specialized in AWS and cloud infrastructure.
+  He has a comprehensive skill set in DevOps and system architecture which he
+  successfully used to build scalable cloud solutions and implementing CI/CD pipelines.
 url:   https://www.fionn.io
 
 # Social settings
@@ -13,6 +13,9 @@ author:
 github:
   title:    GitHub
   username: fmasuhr
+linkedin:
+  title:   LinkedIn
+  profile: fionn-masuhr-975a84350
 stackoverflow:
   id:    5346940
   title: Stack Overflow
