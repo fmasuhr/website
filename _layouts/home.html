@@ -16,6 +16,13 @@ layout: default
   </li>
 
   <li>
+    <a href="https://www.linkedin.com/in/{{ site.linkedin.profile | cgi_escape | escape }}"
+      title="{{ site.linkedin.title }}">
+      {% include social-icon.html type="linkedin" %}
+    </a>
+  </li>
+
+  <li>
     <a href="https://www.xing.com/profile/{{ site.xing.username | cgi_escape | escape }}" title="{{ site.xing.title }}">
       {% include social-icon.html type="xing" %}
     </a>
