@@ -64,3 +64,5 @@ jobs:
       run: aws s3 sync --delete _site/ s3://${{ vars.AWS_BUCKET }}
       env:
         AWS_REGION: ${{ vars.AWS_BUCKET_REGION }}
+    - name: Invalidate CloudFront cache
+      run: aws cloudfront create-invalidation --distribution-id ${{ vars.AWS_DISTRIBUTION_ID }} --paths '/*'
