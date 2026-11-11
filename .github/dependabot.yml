@@ -13,6 +13,10 @@ updates:
       interval: daily
     assignees:
       - fmasuhr
+    groups:
+      github-actions:
+        patterns:
+          - "*"
 
   - package-ecosystem: npm
     directory: /
