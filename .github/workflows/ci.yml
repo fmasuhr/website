@@ -58,9 +58,9 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v6
       with:
-        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-        aws-region: ${{ secrets.AWS_REGION }}
+        role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+        aws-region: ${{ vars.AWS_REGION }}
     - name: Upload to S3
-      run: aws s3 sync --delete _site/ s3://${{ secrets.AWS_BUCKET }}
+      run: aws s3 sync --delete _site/ s3://${{ vars.AWS_BUCKET }}
       env:
-        AWS_REGION: ${{ secrets.AWS_BUCKET_REGION }}
+        AWS_REGION: ${{ vars.AWS_BUCKET_REGION }}
