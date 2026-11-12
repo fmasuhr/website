@@ -1,0 +1,16 @@
+# Configuration of markdownlint-cli2, run by the `lint` job of
+# .github/workflows/ci.yml. Run it locally with `npx markdownlint-cli2@<version>`,
+# with the version the pinned DavidAnson/markdownlint-cli2-action bundles.
+config:
+  # The Jekyll front matter `title` is page metadata, not a heading, so it
+  # doesn't count as the page's top-level heading.
+  MD025:
+    front_matter_title: ""
+  # Headings may end with punctuation (e.g. "{{ site.author.profession }}.").
+  MD026: false
+
+globs:
+  - "**/*.md"
+
+# Skip files ignored by git (e.g. `_site/` and `node_modules/`).
+gitignore: true
