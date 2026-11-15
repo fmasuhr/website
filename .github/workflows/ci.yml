@@ -62,8 +62,11 @@ jobs:
         role-to-assume: ${{ vars.AWS_ROLE_ARN }}
         aws-region: ${{ vars.AWS_REGION }}
     - name: Upload to S3
-      run: aws s3 sync --delete _site/ s3://${{ vars.AWS_BUCKET }}
+      run: aws s3 sync --delete _site/ "s3://$AWS_BUCKET"
       env:
+        AWS_BUCKET: ${{ vars.AWS_BUCKET }}
         AWS_REGION: ${{ vars.AWS_BUCKET_REGION }}
     - name: Invalidate CloudFront cache
-      run: aws cloudfront create-invalidation --distribution-id ${{ vars.AWS_DISTRIBUTION_ID }} --paths '/*'
+      run: aws cloudfront create-invalidation --distribution-id "$AWS_DISTRIBUTION_ID" --paths '/*'
+      env:
+        AWS_DISTRIBUTION_ID: ${{ vars.AWS_DISTRIBUTION_ID }}
