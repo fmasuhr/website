@@ -6,3 +6,7 @@ _site
 
 # Ignore node modules
 /node_modules
+
+# Ignore local Bundler config and gems installed with `bundle config set path vendor/bundle`
+/.bundle
+/vendor

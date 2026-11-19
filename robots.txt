@@ -1,5 +1,8 @@
-# See http://www.robotstxt.org/orig.html#format for documentation on how to use the robots.txt file
-#
-# Allow all
+---
+sitemap: false
+---
+# See https://www.rfc-editor.org/rfc/rfc9309 for the robots.txt format.
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: {{ "/sitemap.xml" | absolute_url }}

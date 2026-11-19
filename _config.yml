@@ -1,5 +1,6 @@
 # Site settings
-brand: fionn.
+title: fionn.
+lang: en-US
 description: >-
   Fionn Masuhr is an experienced software engineer specialized in AWS and cloud infrastructure.
   He has a comprehensive skill set in DevOps and system architecture which he
@@ -32,6 +33,8 @@ exclude:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 sass:
   style: compressed
+  sourcemap: development

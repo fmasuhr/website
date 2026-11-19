@@ -1,7 +1,7 @@
 <footer class="footer h-card">
-  <data class="u-url" value="{{ "/" | relative_url }}"></data>
+  <data class="u-url" value="{{ "/" | absolute_url }}"></data>
 
   <div class="wrapper">
-    © {{ 'now' | date: "%Y" }} <span class="u-name">{{ site.author.name | escape }}</span>
+    © {{ site.time | date: "%Y" }} <span class="p-name">{{ site.author.name | escape }}</span>
   </div>
 </footer>
